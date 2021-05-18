@@ -33,7 +33,7 @@
 #include <strsafe.h>
 #include <math.h>
 
-#define CaptureSourceName L"Unity Video Capture"
+#define CaptureSourceName L"ViUP"
 
 //Use separate GUIDs for 64bit and 32bit so both can be installed at the same time
 #ifdef _WIN64
@@ -1103,7 +1103,7 @@ static HRESULT RegisterFilters(BOOL bRegister)
 					StringFromCLSID(GetCLSIDUnityCaptureServiceNum(i), &CLSID_Filter_Str);
 					StringCchPrintfW(strKey, 256, L"SOFTWARE\\Classes\\CLSID\\%s\\Instance\\%s", CLSID_Category_Str, CLSID_Filter_Str);
 					RegOpenKeyExW(HKEY_LOCAL_MACHINE, strKey, 0, KEY_ALL_ACCESS, &hKey);
-					RegSetValueExA(hKey, "DevicePath", 0, REG_SZ, (LPBYTE)"foo:bar", (DWORD)sizeof("foo:bar"));
+					RegSetValueExA(hKey, "DevicePath", 0, REG_SZ, (LPBYTE)"foo:bar21312312", (DWORD)sizeof("foo:bar"));
 					RegCloseKey(hKey);
 				}
 				if (FAILED(hr)) MessageBoxA(0, "Service RegisterFilter of IFilterMapper2 failed", "RegisterFilters setup", NULL);
